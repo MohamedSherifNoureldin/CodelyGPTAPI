@@ -83,6 +83,11 @@ if __name__ == "__main__":
     print("Sleeping for 65 seconds to avoid OpenAI API throttling")
     time.sleep(65)
 
+    # test generateQuizProblem
+    print("Quiz Problem:")
+    print(gpt3_5TurboAPI.communicateAPI("generateQuizCodeProblem", promptValues))
+    print("\n\n")
+
 
     promptValues = {
         "csvData": """

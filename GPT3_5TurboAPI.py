@@ -9,7 +9,7 @@ class GPT3_5TurboAPI(APIHandler):
         super().__init__()
         promptsFile = open("prompts.json", "r")
         self.__promptTypeToPrompt = json.load(promptsFile)
-        self.__apiKey = "sk-**"
+        self.__apiKey = "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"
         promptsFile.close()
         print("Loaded Prompts")
 
@@ -62,6 +62,8 @@ class GPT3_5TurboAPI(APIHandler):
                     returnDict["Explanation"] = []
                     for row in csv_reader:
                         returnDict["Explanation"].append(row[0].strip().replace("#newline#", "\n"))
+                case "generateQuizCodeProblem":
+                    returnDict["Code Problem"] = response.strip()
                 case "generateTestCases":
                     returnDict["Test Cases"] = []
                     for row in csv_reader:
